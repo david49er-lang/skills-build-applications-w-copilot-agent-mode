@@ -41,7 +41,7 @@ The presentation tier should make loading, empty, success, and error states visi
 <summary>Having trouble? 🤷</summary><br/>
 
 - Keep the shared API client on relative `/api` paths (with an optional `import.meta.env.VITE_API_BASE_URL` override). The Vite proxy forwards them to port 8000, which stays private.
-- Keep fetch logic out of repeated components: each route component imports `getJson` from `src/api/client.ts` and never calls `fetch` directly.
+- Keep fetch logic out of repeated components: each route component uses `useApiData` from `src/api/useApiData.ts` or `getJson` from `src/api/client.ts`, and never calls `fetch` directly.
 - Check accessible names and semantic status/error output when tests fail.
 
 </details>
